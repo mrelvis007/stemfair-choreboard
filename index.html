@@ -132,7 +132,6 @@
         text-transform: uppercase;
         letter-spacing: .125em;
     }
-
 </style>
 
 <body class="bg-dark text-white">
@@ -465,6 +464,11 @@
             }
 
             balance += points;
+            // Cap the balance at 9999 points
+            if (balance > 9999) {
+                balance = 9999;
+            }
+
             console.log("Updated balance:", balance);  // Debugging line to check the balance update
 
             $('#balance-numeral').text(balance);  // Update only the numeral part
